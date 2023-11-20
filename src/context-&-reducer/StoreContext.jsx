@@ -5,9 +5,10 @@ export const StoreContext = createContext();
 
 export const StoreProvider = ({ children }) => {
     const [state, dispatch] = useReducer(reducer , initialState);
+    console.log(state);
 
     const addToBasket = (product) => {
-        const updatedBasket = state.product;
+        const updatedBasket = state.products;
         updatedBasket.push(product);
 
         updatePrice(updatedBasket);
@@ -36,7 +37,7 @@ export const StoreProvider = ({ children }) => {
         });
 
         dispatch({
-            type: "update price",
+            type: "update_price",
             payload: total
         })
     }

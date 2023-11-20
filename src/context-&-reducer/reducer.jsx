@@ -14,7 +14,7 @@ const storeReducer = (state, action) => {
                 ...state,
                 products: action.payload
             }
-        case "update price":
+        case "update_price":
             return {
                 ...state,
                 total: action.payload
